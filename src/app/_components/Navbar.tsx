@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Link } from "@nextui-org/react";
-import { AcmeLogo } from "./AcmeLogo.jsx";
 import DropdownComponent from "./DropdownComponent";
 export default function NavbarComponent() {
   return (
