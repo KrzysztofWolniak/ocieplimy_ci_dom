@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavbarComponent from "./_components/Navbar";
-
+import NavbarComponent from "./components/Navbar";
+import NabvigationBar from "./components/NavigationBar";
+import { NextUIProvider } from "@nextui-org/system";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { useRouter } from "next/navigation";
+import { Providers } from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,9 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body className={inter.className}>
+        <Providers>
+          <main className="dark text-foreground bg-background">
+            <NabvigationBar />
+            {children}
+          </main>
+        </Providers>
+      </body>
     </html>
   );
 }
