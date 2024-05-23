@@ -39,11 +39,13 @@ export default function NabvigationBar() {
   };
 
   return (
-    <div className="w-full">
+    
       <Navbar
         maxWidth="xl"
         className="h-24 w-full"
         style={{ backgroundColor: "#1F1F1F" }}
+        position="sticky"
+        isBlurred={true}
       >
         <NavbarBrand>
             <Link href="/"  >
@@ -158,6 +160,6 @@ export default function NabvigationBar() {
           </NavbarItem>
         </NavbarContent>
       </Navbar>
-    </div>
+
   );
 }
