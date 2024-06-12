@@ -1,18 +1,13 @@
-"use client"
-import Image from "next/image";
+// app/contact/page.tsx
+import ContactForm from '../components/ContactForm';
 
-import mainImage from "./_components/assets/attic.webp";
-import { NextUIProvider } from "@nextui-org/react";
-import MainImage from "../components/MainImage";
-
-export default function Page() {
+const ContactPage = () => {
   return (
-   <>
-   <MainImage />
-   </>
-      
-   
-      
-    
+    <div className="container mx-auto p-4" style={{ backgroundColor: "#1f1f1f" }}>
+      <h1 className="text-3xl font-bold mb-6">Kontakt</h1>
+      <ContactForm />
+    </div>
   );
-}
+};
+
+export default ContactPage;

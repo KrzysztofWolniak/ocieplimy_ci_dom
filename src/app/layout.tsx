@@ -7,6 +7,7 @@ import { NextUIProvider } from "@nextui-org/system";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { useRouter } from "next/navigation";
 import { Providers } from "./providers";
+import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,7 +26,9 @@ export default function RootLayout({
         <Providers>
           <main className="dark text-foreground bg-background">
             <NabvigationBar />
+            
             {children}
+            <Footer/>
           </main>
         </Providers>
       </body>
