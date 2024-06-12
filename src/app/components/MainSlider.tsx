@@ -1,6 +1,6 @@
 "use client"
-import React, { useState, useEffect, useRef } from 'react';
-import { Button, Card, CardBody } from '@nextui-org/react';
+import React, { useState, useRef } from 'react';
+import { Card, CardBody } from '@nextui-org/react';
 
 const slides = [
   {
@@ -27,39 +27,78 @@ const MainSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
   const totalSlides = slides.length;
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const nextSlide = () => {
-    if (slideRef.current) {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
   };
 
   const prevSlide = () => {
-    if (slideRef.current) {
-      setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      nextSlide();
+    } else if (touchStartX.current - touchEndX.current < -50) {
+      prevSlide();
     }
   };
 
-  useEffect(() => {
-    // const slideInterval = setInterval(nextSlide, 5000);
-    // return () => clearInterval(slideInterval);
-  }, []);
-
   return (
-    <div className="relative overflow-hidden w-full h-[632px]" ref={slideRef} style={{ backgroundColor: "#1F1F1F" }}>
-      <Button auto light onClick={prevSlide} className="absolute top-1/2 left-4 z-10 transform -translate-y-1/2">
-        Prev
-      </Button>
-      <Button auto light onClick={nextSlide} className="absolute top-1/2 right-4 z-10 transform -translate-y-1/2">
-        Next
-      </Button>
+    <div
+      className="relative overflow-hidden w-full h-[632px] group"
+      ref={slideRef}
+      style={{ backgroundColor: "#1F1F1F" }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div>
+      <div
+        onClick={prevSlide}
+        className="opacity-0 hover:!opacity-[1]   xl:group-hover:opacity-50 absolute   top-1/2 left-4 z-10 transform -translate-y-1/2 cursor-pointer transition-all duration-300 ease-in-out"
+        style={{ 
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+          borderRadius: '50%', 
+          padding: '20px',
+          transition: 'opacity 0.3s, transform 0.3s'
+        }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </div>
+      </div>
+      
+      <div
+        onClick={nextSlide}
+        className="opacity-0 hover:!opacity-[1]   xl:group-hover:opacity-50 absolute  hover:opacity-[1] top-1/2 right-4 z-10 transform -translate-y-1/2 cursor-pointer transition-all duration-300 ease-in-out"
+        style={{ 
+          backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+          borderRadius: '50%', 
+          padding: '20px',
+          transition: 'opacity 0.3s, transform 0.3s'
+        }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </div>
       <div className="flex transition-transform duration-700" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-        {slides.concat(slides).map((slide, index) => (
+        {slides.map((slide, index) => (
           <Card
-          light
-          radius='none'
             key={index}
-            className="w-full flex-shrink-0 "
+            className="w-full flex-shrink-0"
             style={{
               backgroundImage: `url(${slide.background})`,
               backgroundSize: 'cover',
