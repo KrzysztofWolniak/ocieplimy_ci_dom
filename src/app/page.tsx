@@ -26,12 +26,12 @@ export default function Home() {
 					"Naszym głównym celem jest dostarczenie najwyższej jakości usług, które będą adaptacyjne do indywidualnych potrzeb każdego klienta. Dlaczego warto skorzystać z naszej usługi? Ponieważ oferujemy nowoczesne rozwiązania, które zapewniają oszczędność energii, a także zwracają uwagę na ekologię i zrównoważony rozwój.",
 					"Oferujemy kompleksowe planowanie i realizację ocieplania domu, wykorzystując innowacyjne technologie i zaawansowane inżynierie. Nasze usługi są najlepszym rozwiązaniem dla Twojego domu, gwarantując efektywność i trwałość na długie lata.",
 				]}
-				link={{ href: "https://now.cyberfolks.pl/demo/CP97GNGSF1VW/o-nas", text: "Czytaj więcej" }}
+				link={{ href: "https://now.cyberfolks.pl/demo/CP97GNGSF1VW/o-nas", text: "CZYTAJ WIĘCEJ" }}
 			/>
 
 			<ServicesFront></ServicesFront>
 			<CtaBlock></CtaBlock>
-			<AttributesSection></AttributesSection>
+			{/* <AttributesSection></AttributesSection> */}
 			<Section
 				id="section2"
 				imageSrc="https://static.cyberfolks.pl/img/cpx/construction%20company-1145434-hi_res.webp"
@@ -43,7 +43,7 @@ export default function Home() {
 					"Nasza firma ma bogate doświadczenie w branży i z dumą możemy powiedzieć, że osiągnęliśmy wiele sukcesów.",
 					"Zapraszamy do skorzystania z naszych usług i dołączenia do grona zadowolonych klientów.",
 				]}
-				link={{ href: "https://now.cyberfolks.pl/demo/CP97GNGSF1VW/nasza-oferta", text: "Czytaj więcej" }}
+				link={{ href: "https://now.cyberfolks.pl/demo/CP97GNGSF1VW/nasza-oferta", text: "CZYTAJ WIĘCEJ" }}
 			/>
 			<BlogSection></BlogSection>
 			

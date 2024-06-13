@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className} >
         <Providers>
-          <main className="dark text-foreground bg-background">
+          <main className="dark text-foreground bg-background" style={{ backgroundColor: "#1F1F1F" }}>
             <NabvigationBar />
             
             {children}
