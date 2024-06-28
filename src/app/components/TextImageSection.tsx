@@ -19,13 +19,13 @@ const CustomLink = ({ href, children }) => (
 
 const Section = ({ id, imageSrc, altText, header, subHeader, paragraphs, link }) => (
 	<section id={id} className="py-16  flex flex-col justify-between lg:flex-row px-3 xl:px-0 lg:mb-5 " style={{ backgroundColor: "#1F1F1F" }}>
-		<div className="   min-h-full xl:w-[44vw] *:h-full">
+		<div className="   min-h-full xl:w-[44vw] *:h-full mb-5">
 			<Image
 				radius="sm"
 				src={imageSrc}
 				alt={altText}
 				style={{height:"100%"}}
-				className="lg:w-[45vw] lg:max-w-[45vw] -translate-x-[30px]   xl:max-w-[57vw] xl:w-[46vw]  object-cover lg:rounded-s-none xl:rounded-s-none"
+				className="lg:w-[45vw] lg:max-w-[45vw] lg:-translate-x-[30px]   xl:max-w-[57vw] xl:w-[46vw]  object-cover lg:rounded-s-none xl:rounded-s-none"
 			/>
 		</div>
 		<div className="w-full xl:w-1/2 ps-5 ">
