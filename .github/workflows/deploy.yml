@@ -1,0 +1,28 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Add VPS to known hosts
+      run: echo "${{ secrets.KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+    - name: Copy files via SCP
+      run: scp -r * krzysiek@45.10.154.236:~/projects/ocieplimy_ci_dom
+
+    - name: Run deployment script
+      run: ssh krzysiek@45.10.154.236 'bash ~/projects/ocieplimy_ci_dom/deploy.sh'
