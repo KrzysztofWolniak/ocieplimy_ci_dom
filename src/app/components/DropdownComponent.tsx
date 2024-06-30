@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function DropdownComponent({ navbarItems }) {
 	return (
-		<Dropdown backdrop="blur">
+		<Dropdown backdrop="opaque">
 			<DropdownTrigger>
 				<Button variant="light" className="text-white lg:hidden flex-col h-full">
 					<svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
