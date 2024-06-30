@@ -2,6 +2,11 @@
 
 cd ~/projects/ocieplimy_ci_dom
 
+# Load nvm and use the correct version of Node.js
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm use 20.11.1
+
 # Install dependencies
 npm install
 
