@@ -29,7 +29,7 @@ const Section = ({ id, imageSrc, altText, header, subHeader, paragraphs, link })
 			/>
 		</div>
 		<div className="w-full xl:w-1/2 ps-5 ">
-			<div className="mx- w- text-start xl:max-w-3xl xl:pe-5 h-full flex flex-col justify-start  xl:mt-0 pe-8 ">
+			<div className="mx- w- text-center lg:text-start xl:max-w-3xl xl:pe-5 h-full flex flex-col justify-start  xl:mt-0 pe-8 ">
 				<SubHeader>{subHeader}</SubHeader>
 				<h2 className="mb-6 leading-tight font-extrabold text-[36px] tracking-[2px]">{header}</h2>
 				{paragraphs.map((text, index) => (
@@ -45,11 +45,11 @@ const Section = ({ id, imageSrc, altText, header, subHeader, paragraphs, link })
 								<path
 									d="M8 1H1V15C1 16.1046 1.89543 17 3 17H15C16.1046 17 17 16.1046 17 15V10"
 									stroke="white"
-									stroke-linecap="round"
-									stroke-linejoin="round"
+									strokeLinecap="round"
+									strokeLinejoin="round"
 								></path>
-								<path d="M6 12L17 1" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
-								<path d="M12 1H17V6" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M6 12L17 1" stroke="white" strokeLinecap="round" strokeLinejoin="round"></path>
+								<path d="M12 1H17V6" stroke="white" strokeLinecap="round" strokeLinejoin="round"></path>
 							</svg>
 						}
 					</CustomLink>

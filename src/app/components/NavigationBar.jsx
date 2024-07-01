@@ -15,7 +15,8 @@ import { ChevronDown, Lock, Activity, Flash, Server, TagUser, Scale } from "./Ic
 import DropdownComponent from "./DropdownComponent.tsx";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import Link from "next/link.js";
-
+import Image from "next/image.js";
+import icon from "@/app/icons8-fire-alt-stickers-96.png"
 export default function NavigationBar() {
 	const icons = {
 		chevron: <ChevronDown fill="currentColor" size={16} />,
@@ -82,10 +83,11 @@ export default function NavigationBar() {
 	];
 
 	return (
-		<Navbar maxWidth="xl" className="h-24 w-full" style={{ backgroundColor: "#1F1F1F" }} position="sticky" isBlurred={true}>
+		<Navbar maxWidth="xl" className="h-24 w-full *:pe-2" style={{ backgroundColor: "#1F1F1F" }} position="sticky" isBlurred={true}>
 			<NavbarBrand>
-				<Link href="/">
-					<p className="font-bold text-inherit">OcieplimyCiDom</p>
+				<Link href="/" className="flex flex-row">
+				<Image src={icon} height={46}></Image>
+					<p className="font-bold text-inherit text center self-center ms-2">OcieplimyCiDom</p>
 				</Link>
 			</NavbarBrand>
 			<NavbarContent className="hidden lg:flex gap-4 " justify="center">

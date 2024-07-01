@@ -4,13 +4,16 @@ import Link from "next/link";
 
 export default function DropdownComponent({ navbarItems }) {
 	return (
-		<Dropdown backdrop="opaque">
+		<Dropdown showArrow placement="bottom-end"  classNames={{
+			base: "before:bg-default-200 before:!left-[86.5%]", // change arrow background
+			content: "py-1 px-1 border border-default-200 bg-gradient-to-br from-white to-default-200 dark:from-default-50 dark:to-black",
+		  }}>
 			<DropdownTrigger>
-				<Button variant="light" className="text-white lg:hidden flex-col h-full">
+				<Button variant="light" className="text-white lg:hidden flex-col  h-full">
 					<svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
 						<path className="inline-flex" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
 					</svg>
-					Menu
+					
 				</Button>
 			</DropdownTrigger>
 			<DropdownMenu aria-label="Dynamic Actions">

@@ -2,19 +2,13 @@
 import {  Link } from '@nextui-org/react';
 
 const Footer = () => {
-    return (
-      <footer className="bg-gray-800 text-white pt-20">
-        <div className="container mx-auto">
-          <div className="flex justify-between">
-            <FooterInfo />
-            <FooterMenu />
-            <FooterBlog />
-            <FooterForm />
-          </div>
-          <FooterCopyright />
-        </div>
-      </footer>
-    );
+  return (
+    <footer className="bg-gray-800 text-white w-full mt-auto">
+      <div className="w-full">
+        <FooterCopyright />
+      </div>
+    </footer>
+  );
   };
 
   const FooterInfo = () => (
@@ -122,7 +116,7 @@ const FooterBlog = () => (
   const FooterForm = () => (
     <div>
       <p className="text-lg font-extrabold mb-10">kontaktuj się z nami</p>
-      <form id="footerForm" className="flex flex-col space-y-6">
+      {/* <form id="footerForm" className="flex flex-col space-y-6">
         {['Imię i nazwisko', 'Adres e-mail', 'Numer telefonu', 'Nazwa firmy', 'Temat', 'Wiadomość'].map((placeholder, index) => (
           index < 5 ? (
             <input key={placeholder} type={index === 2 ? 'number' : 'text'} placeholder={placeholder} className="bg-gray-900 text-gray-500 border border-gray-700 px-4 py-3" />
@@ -139,21 +133,21 @@ const FooterBlog = () => (
         <button className="bg-orange-600 text-white border border-orange-600 py-3 px-8 mt-8">
           Wyślij wiadomość
         </button>
-      </form>
+      </form> */}
     </div>
   );
 
   const FooterCopyright = () => (
-    <div className="bg-black text-gray-400 py-4 mt-12">
-      <div className="container mx-auto flex justify-between items-center">
+    <div className="bg-black text-gray-400 py-4 px-5 w-full">
+      <div className=" mx-auto flex justify-between items-center">
         <p className="text-sm">
-          © _Now by cyber_Folks. Wszelkie prawa zastrzeżone
+          © Ocieplimy Ci Dom. Wszelkie prawa zastrzeżone
         </p>
         <ul className="flex space-x-6">
           <li>
-            <a href="#" className="text-sm text-gray-400">
+            <Link href="#" className="text-sm text-gray-400">
               Polityka prywatności
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
