@@ -83,11 +83,11 @@ export default function NavigationBar() {
 	];
 
 	return (
-		<Navbar maxWidth="xl" className="h-24 w-full *:pe-2" style={{ backgroundColor: "#1F1F1F" }} position="sticky" isBlurred={true}>
+		<Navbar maxWidth="xl" className="h-20 w-full *:pe-2" style={{ backgroundColor: "#1F1F1F" }} position="sticky" isBlurred={true}>
 			<NavbarBrand>
 				<Link href="/" className="flex flex-row">
-				<Image src={icon} height={46}></Image>
-					<p className="font-bold text-inherit text center self-center ms-2">OcieplimyCiDom</p>
+				
+					<p className="font-bold text-inherit text-center text-wrap w-[6rem] self-center ms-2">Ocieplimy Ci Dom</p>
 				</Link>
 			</NavbarBrand>
 			<NavbarContent className="hidden lg:flex gap-4 " justify="center">
