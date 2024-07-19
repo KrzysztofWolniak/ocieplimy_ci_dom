@@ -24,7 +24,7 @@ const BlogHeader = () => {
     return (
       <a
         href={href}
-        className="relative flex flex-col justify-end bg-cover bg-center bg-no-repeat text-white p-12 w-full lg:w-1/2 h-full"
+        className="relative flex flex-col justify-end bg-cover bg-center bg-no-repeat text-white p-12 w-full  h-full"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -42,7 +42,7 @@ const BlogHeader = () => {
     return (
       <a
         href={href}
-        className="flex mb-8 bg-gray-800 text-white overflow-hidden rounded-lg"
+        className="flex mb-8 bg-gray-800 text-white overflow-hidden rounded-lg w-full"
       >
         <div className="w-1/3">
           <img src={image} alt={title} className="w-full h-full object-cover" />
@@ -65,7 +65,7 @@ const BlogSection = () => {
     <section className="flex justify-center py-20 px-8">
       <div className="max-w-screen-xl w-full">
         <BlogHeader />
-        <div className="flex flex-wrap -mx-4">
+        <div className=" -mx-4 grid grid-cols-2">
           <BlogFirstItem
             href="https://now.cyberfolks.pl/demo/CP97GNGSF1VW/blog/innowacyjne-technologie-w-budownictwie-jak"
             bgImage="https://static.cyberfolks.pl/img/cpx/construction%20company-6474478-hi_res.webp"
@@ -73,7 +73,7 @@ const BlogSection = () => {
             date="15 May"
             title="Innowacyjne technologie w budownictwie: Jak zwiększyć efektywność budowy?"
           />
-          <div className="w-full lg:w-1/2 px-4">
+          <div className="w-full  px-4">
             <BlogItem
               href="https://now.cyberfolks.pl/demo/CP97GNGSF1VW/blog/innowacyjne-metody-zarzadzania-kosztami-w"
               image="https://static.cyberfolks.pl/img/cpx/construction%20company-3680959-hi_res.webp"
